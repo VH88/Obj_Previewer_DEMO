@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <vh.objpreviewerdemo.MyGLSurfaceView
+        android:id="@+id/OpenGL"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+    </vh.objpreviewerdemo.MyGLSurfaceView>
+
+    <LinearLayout
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/btn_left_arrow"
+                style="@android:style/Widget.Holo.Light.ImageButton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginBottom="32dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
+                android:background="@drawable/btn_left_style"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ImageButton
+                android:id="@+id/btn_right_arrow"
+                style="@android:style/Widget.Holo.Light.ImageButton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginBottom="32dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/btn_right_style"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <vh.objpreviewerdemo.Utils.BtnRotateState
+                android:id="@+id/rotate_toggle_state"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginBottom="32dp"
+                android:layout_marginStart="16dp"
+                android:textOff=""
+                android:textOn=""
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/btn_left_arrow"
+                app:srcCompat="@drawable/btn_left_arrow">
+
+            </vh.objpreviewerdemo.Utils.BtnRotateState>
+
+            <ImageButton
+                android:id="@+id/reset_rotation"
+                style="@android:style/Widget.Holo.Light.ImageButton"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginBottom="36dp"
+                android:layout_marginStart="24dp"
+                android:background="@drawable/btn_reset_style"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/toggleEnvShow" />
+
+            <ToggleButton
+                android:id="@+id/toggleEnvShow"
+                style="@style/Widget.Button.Toggle"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginBottom="32dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/btn_show_env_toggle"
+                android:checked="true"
+                android:text="ToggleButton"
+                android:textOff=""
+                android:textOn=""
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/rotate_toggle_state" />
+
+            <ToggleButton
+                android:id="@+id/btn_settings"
+                style="@style/Widget.Button.Toggle"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/btn_settings_style"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textOff=""
+                android:textOn=""
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/settings_layout"
+                android:layout_width="170dp"
+                android:layout_height="64dp"
+                android:layout_marginStart="56dp"
+                android:layout_marginTop="16dp"
+                android:background="#4b000000"
+                android:orientation="vertical"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/select_environment"
+                    android:layout_width="138dp"
+                    android:layout_height="36dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Select Environment"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/background_light"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    tools:layout_editor_absoluteY="38dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/environment_selection_layout"
+                android:layout_width="161dp"
+                android:layout_height="350dp"
+                android:layout_marginStart="230dp"
+                android:layout_marginTop="16dp"
+                android:background="#4b000000"
+                android:orientation="vertical"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                android:id="@+id/gravel_plaza"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:text="Gravel Plaza"
+                android:textColor="@android:color/background_light"
+                app:layout_constraintLeft_toLeftOf="parent"
+                tools:layout_editor_absoluteY="38dp" />
+
+                <TextView
+                    android:id="@+id/charles_river"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="30dp"
+                    android:text="Charles River"
+                    android:textColor="@android:color/background_light"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    tools:layout_editor_absoluteY="38dp" />
+
+                <TextView
+                    android:id="@+id/ice_lake"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="30dp"
+                    android:text="Ice Lake"
+                    android:textColor="@android:color/background_light"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    tools:layout_editor_absoluteY="38dp" />
+
+                <TextView
+                    android:id="@+id/old_industrial"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="30dp"
+                    android:text="Old Industrial"
+                    android:textColor="@android:color/background_light"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    tools:layout_editor_absoluteY="38dp" />
+
+                <TextView
+                    android:id="@+id/popcorn_lobby"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="30dp"
+                    android:text="Popcorn Lobby"
+                    android:textColor="@android:color/background_light"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    tools:layout_editor_absoluteY="38dp" />
+
+                <TextView
+                    android:id="@+id/tropical_forest"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="30dp"
+                    android:text="Tropical Ruins"
+                    android:textColor="@android:color/background_light"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    tools:layout_editor_absoluteY="38dp" />
+
+                <TextView
+                    android:id="@+id/winter_forest"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="30dp"
+                    android:text="Winter Forest"
+                    android:textColor="@android:color/background_light"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    tools:layout_editor_absoluteY="38dp" />
+
+
+
+            </LinearLayout>
+
+        </android.support.constraint.ConstraintLayout>
+    </LinearLayout>
+
+
+</FrameLayout>

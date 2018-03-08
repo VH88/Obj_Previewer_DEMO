@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="RotationToggleState">
+        <attr name="state_rot_object" format="boolean"/>
+        <attr name="state_rot_env" format="boolean"/>
+        <attr name="state_rot_scene" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="TriToggleState">
+        <attr name="state_one" format="boolean"/>
+        <attr name="state_two" format="boolean"/>
+        <attr name="state_three" format="boolean"/>
+    </declare-styleable>
+
+
+</resources>
